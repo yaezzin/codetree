@@ -5,7 +5,7 @@ b = list(input())
 def func():
     tmp = -1
     
-    for i in range(len(a) - 1):
+    for i in range(len(a) - len(b) + 1):
 
         for j in range(len(b)):
 
