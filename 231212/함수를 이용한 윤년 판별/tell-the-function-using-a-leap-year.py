@@ -1,13 +1,18 @@
 def is_leap_year(n):
     if n % 4 == 0:
-        return 'true'
+        if n % 100 == 0:
+            if n % 400 == 0:
+                return True
+            
+            return False
+        
+        return True
     
-    if n % 4 == 0 and n % 100 == 0:
-        if n % 400 == 0:
-            return 'true'
-        return 'false'
+    return False
 
-    return 'false'
-
+        
 n = int(input())
-print(is_leap_year(n))
+if is_leap_year(n):
+    print('true')
+else:
+    print('false')
