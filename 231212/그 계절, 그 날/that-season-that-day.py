@@ -7,8 +7,6 @@ def is_leap_year(y):
     
     if y % 400 == 0:
         return True
-    
-    return False
 
 def last_day(y, m):
     if not is_leap_year(y) and m == 2:
@@ -31,7 +29,7 @@ def is_wether(m):
         print('Spring')
     
     elif m == 6 or m == 7 or m == 8:
-        print('Fall')
+        print('Summer')
     
     else:
         print('Fall')
