@@ -4,7 +4,7 @@ tmp = []
 for _ in range(int(n)):
     s = input()
     
-    if s[0:len(t)] == t:
+    if s.startswith(t):
         tmp.append(s)
     
 tmp.sort()
