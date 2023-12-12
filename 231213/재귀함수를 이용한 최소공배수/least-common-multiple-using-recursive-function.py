@@ -8,10 +8,11 @@ def find_lcm_recursive(x, y):
     return x * y // gcd
 
 def find_lcm_recursive_list(numbers):
-    if len(numbers) == 2:
-        return find_lcm_recursive(numbers[0], numbers[1])
+    if len(numbers) == 1:
+        return numbers[0]
     else:
-        return find_lcm_recursive_list([find_lcm_recursive(numbers[0], numbers[1])] + numbers[2:])
+        return find_lcm_recursive(numbers[0], find_lcm_recursive_list(numbers[1:]))
+
 
 n = int(input())
 numbers = list(map(int, input().split()))
