@@ -11,9 +11,9 @@ def find_lcm(x, y):
 
 def find_lcm_recursive_list(numbers):
     if len(numbers) == 2:
-        return find_lcm_recursive(numbers[0], numbers[1])
+        return find_lcm(numbers[0], numbers[1])
     else:
-        return find_lcm_recursive_list([find_lcm_recursive(numbers[0], numbers[1])] + numbers[2:])
+        return find_lcm_recursive_list([find_lcm(numbers[0], numbers[1])] + numbers[2:])
 
 
 n = int(input())
