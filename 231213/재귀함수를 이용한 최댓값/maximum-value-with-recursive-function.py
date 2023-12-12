@@ -1,17 +1,10 @@
 n = int(input())
 lst = list(map(int, input().split()))
 
-m = 0
 def func(i):
-    global m 
-
     if i == n:
-        return m 
+        return lst[0]
 
-    if lst[i] < m:
-        return func(i + 1)
-    else:
-        m = lst[i]
-        return func(i+1)
+    return max(func(i+1), lst[i])
 
 print(func(0))
