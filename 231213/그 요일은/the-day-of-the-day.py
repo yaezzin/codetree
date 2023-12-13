@@ -32,7 +32,8 @@ input_dow = input()
 diff = func(m2, d2) - func(m1, d1)
 diff_dow = func2(input_dow)
 
-if diff // 7 > diff_dow:
-    print((diff - diff_dow) // 7 + 1)
+#print(diff)
+if diff % 7 > diff_dow:
+    print(diff // 7 + 1)
 else:
-    print((diff - diff_dow) // 7)
+    print(diff // 7)
