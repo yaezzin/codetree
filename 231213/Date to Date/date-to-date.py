@@ -10,10 +10,13 @@ for i in range(m1):
 total1 += d1
 
 # 날짜 2
-total2 = 1
+total2 = 0
 for i in range(m2):
     total2 += num_of_days[i]
 
 total2 += d2
 
-print(total2 - total1)
+if total2 - total1 == 0:
+    print(1)
+else:
+    print(total2 - total1)
