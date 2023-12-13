@@ -9,4 +9,7 @@ while n != 0:
 
     n //= 2
 
-print(''.join(map(str, digits[::-1])))
+if len(digits) == 0:
+    print(0)
+else:
+    print(''.join(map(str, digits[::-1])))
