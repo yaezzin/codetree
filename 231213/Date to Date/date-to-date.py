@@ -16,4 +16,4 @@ for i in range(m2):
 
 total2 += d2
 
-print(total2 - total1 + 1)
+print(total2 - total1)
