@@ -34,5 +34,4 @@ for e in checked:
     if e >= 2:
         cnt += 1
 
-print(checked)
 print(cnt)
