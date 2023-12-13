@@ -5,4 +5,7 @@ a, b, c = map(int, input().split())
 total = (a * 24 * 60) + (b * 60) + c
 total2 = (11 * 24 * 60) + (11 * 60) + 11
 
-print(total - total2)
+if total - total2 < 0:
+    print(-1)
+else:
+    print(total - total2)
