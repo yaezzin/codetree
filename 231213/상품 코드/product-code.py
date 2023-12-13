@@ -1,8 +1,15 @@
-info = ('codetree', 50)
-name, code = info
+class Product:
+    def __init__(self, name, code):
+        self.name = name
+        self.code = code
+    
+# 1번 생성
+product1 = Product("codetree", 50)
 
-info1 = tuple(input().split())
-name1, code1 = info1
+# 2번 생성
+name, code = tuple(input().split())
+product2 = Product(name, int(code))
 
-print('product', code, 'is', name)
-print('product', code1, 'is', name1)
+# 출력
+print('product', product1.code, 'is', product1.name)
+print('product', product2.code, 'is', product2.name)
