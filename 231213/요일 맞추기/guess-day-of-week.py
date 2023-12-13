@@ -17,13 +17,8 @@ m1, d1, m2, d2 = map(int, input().split())
 tmp1 = func(m1, d1)
 tmp2 = func(m2, d2)
 
-diff = tmp2 - tmp1 + 1
+diff = tmp2 - tmp1
+diff %= 7
 
-if diff < 0:
-    diff %= 7
-    diff += 7
-else:
-    diff %= 7
-
-dow = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+dow = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 print(dow[diff])
