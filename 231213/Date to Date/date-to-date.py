@@ -1,22 +1,15 @@
 m1, d1, m2, d2 = map(int, input().split())
 
-num_of_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+def num_of_days(m, d):
+    days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-# 날짜 1에 대해 총 며칠인지 구하기
-total1 = 0
-for i in range(m1):
-    total1 += num_of_days[i]
+    total = 0
+    for i in range(1, m):
+        total += days[i]
 
-total1 += d1
+    total += d
 
-# 날짜 2
-total2 = 0
-for i in range(m2):
-    total2 += num_of_days[i]
+    return total
 
-total2 += d2
-
-if total2 - total1 == 0:
-    print(1)
-else:
-    print(total2 - total1)
+result = num_of_days(m2, d2) - num_of_days(m1, d1) + 1
+print(result)
