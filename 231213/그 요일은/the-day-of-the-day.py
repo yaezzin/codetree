@@ -1,3 +1,5 @@
+import math
+
 def func(m, d):
     days = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
@@ -9,15 +11,24 @@ def func(m, d):
 
     return total
 
+def diff_dow(input_dow):
+    cnt = 0
+    i = 0
+    
+    while dow[i] != input_dow:
+        cnt += 1
+        i += 1
+
+    return cnt 
+    
+dow = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
 m1, d1, m2, d2 = map(int, input().split())
 input_dow = input()
 
-dow = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-if d1 != d2:
-    i = 0
-    while dow[i] != input_dow:
-        d1 += 1
-        i += 1 
-
 diff = func(m2, d2) - func(m1, d1)
-print(diff // 7 + 1)
+if diff <= diff_dow(input_dow):
+    print(diff // 7)
+
+else:
+    print(diff // 7 + 1)
