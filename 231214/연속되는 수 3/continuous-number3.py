@@ -11,4 +11,7 @@ max_value = 0
 for i in range(len(points) - 1):
     max_value = max(points[i+1] - points[i], max_value)
 
-print(max_value)
+if max_value == 0:
+    print(len(lst))
+else:
+    print(max_value)
