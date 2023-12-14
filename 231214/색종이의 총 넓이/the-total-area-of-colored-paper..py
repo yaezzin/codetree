@@ -1,4 +1,4 @@
-OFFSET == 100
+OFFSET = 100
 #
 
 n = int(input())
