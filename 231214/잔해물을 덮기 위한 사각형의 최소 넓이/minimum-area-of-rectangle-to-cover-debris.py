@@ -5,8 +5,8 @@ checked = [ [0] * (MAX_R + 1) for _ in range(MAX_R + 1)]
 
 for idx in range(2):
     x1, y1, x2, y2 = tuple(map(int, input().split()))
-    #x1, y1 = x1 + OFFSET, y1 + OFFSET
-    #x2, y2 = x2 + OFFSET, y2 + OFFSET
+    x1, y1 = x1 + OFFSET, y1 + OFFSET
+    x2, y2 = x2 + OFFSET, y2 + OFFSET
 
     for i in range(x1, x2):
         for j in range(y1, y2):
