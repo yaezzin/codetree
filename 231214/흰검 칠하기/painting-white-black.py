@@ -7,9 +7,8 @@ n = int(input())
 segments = []
 cur = 0
 color = ''
-for _ in range(n):
-    
-    distance, direction = tuple(input().split())
+for _ in range(n): 
+    distance, direction = input().split()
     distance = int(distance)
     
     if direction == 'L':
@@ -42,6 +41,7 @@ for x1, x2, c in segments:
             checked[i][0] += 1
             checked[i][2] = 0
 
+#print(checked)
        
 gray = 0
 black = 0
@@ -50,10 +50,11 @@ for i in range(len(checked)):
     if checked[i][0] >= 2 and checked[i][1] >= 2:
         gray += 1
 
-    elif checked[i][0] == 1 and checked[i][2] == 1:
-        black += 1
-
-    elif checked[i][0] == 1 and checked[i][2] == 0:
+    elif checked[i][0] >= 1 and checked[i][2] == 0:
         white += 1
 
+    elif checked[i][1] >= 1 and checked[i][2] == 1:
+        black += 1
+
+    
 print(white, black, gray)
