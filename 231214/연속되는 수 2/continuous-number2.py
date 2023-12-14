@@ -19,7 +19,7 @@ for i in range(1, len(change_point)):
     max_value = max(tmp, max_value)
 
 # 만약 max_value가 0이라면 모든 리스트가 동일한 숫자로 이루어졌다는 것
-if m == 0:
+if max_value == 0:
     print(len(lst))
 else:
-    print(m)
+    print(max_value)
