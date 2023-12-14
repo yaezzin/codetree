@@ -16,8 +16,8 @@ for _ in range(n):
                 lst[i][j] = 1
                 
 
-for i in range(165):
-    for j in range(165):
+for i in range(MAX_R + 1):
+    for j in range(MAX_R + 1):
         if lst[i][j] == 1:
             cnt += 1
 
