@@ -1,3 +1,5 @@
+import sys
+
 OFFSET = 1000
 MAX_R = 2000
 
@@ -12,7 +14,8 @@ for idx in range(2):
         for j in range(y1, y2):
             checked[i][j] = idx + 1
 
-min_row, min_col = MAX_R, MAX_R
+
+min_row, min_col = sys.maxsize, sys.maxsize
 max_row, max_col = 0, 0
 for r in range(MAX_R + 1):
     for c in range(MAX_R + 1):  
@@ -23,5 +26,8 @@ for r in range(MAX_R + 1):
             min_col = min(min_col, c)
             max_col = max(max_col, c)
 
-result = (max_row - min_row + 1) * (max_col - min_col + 1)
-print(result)
+if max_row == 0 and max_col == 0:
+    print(0)
+else:
+    result = (max_row - min_row + 1) * (max_col - min_col + 1)
+    print(result)
