@@ -1,4 +1,4 @@
-MAX_R = 30
+MAX_R = 1000000
 
 n, m = map(int, input().split())
 pos_a, pos_b = [0] * (MAX_R + 1), [0] * (MAX_R + 1)
