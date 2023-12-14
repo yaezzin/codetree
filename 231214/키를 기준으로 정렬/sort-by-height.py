@@ -7,6 +7,5 @@ for _ in range(n):
 
 lst.sort(key=lambda x: x[1])
 
-for l in lst:
-    name, height, weight = l
+for name, height, weight in lst:
     print(name, height, weight)
