@@ -12,10 +12,12 @@ for i in range(len(lst)):
 
 change_point = change_point[::-1]
 
-m = 1
-for i in range(1, len(change_point) ):
+m = 0
+for i in range(1, len(change_point)):
     tmp = change_point[i-1] - change_point[i]
     m = max(tmp, m)
 
-
-print(m)
+if m == 0:
+    print(len(lst))
+else:
+    print(m)
