@@ -1,5 +1,3 @@
-s = list(input())
-
 def decimal(lst):
     s = 0
     for i in range(len(lst)):
@@ -7,26 +5,18 @@ def decimal(lst):
    
     return s
 
+# main
+
+s = list(map(int, list(input())))
+
 answer = 0
 for i in range(len(s)):
-    if s[i] == '1':
-        s[i] = '0'
-        # 2진법을 => 10진법으로 바꾸기
-        result = decimal(s)
-
-        # 최대값 구하기
-        answer = max(result, answer)
+    s[i] = 1 - s[i] # 1이면 0이 되고, 0이면 1이 됨
     
-        s[i] = '1'
-    else:
-        s[i] = '1'
-        # 2진법을 => 10진법으로 바꾸기
-        result = decimal(s)
+    tmp = decimal(s)
 
-        # 최대값 구하기
-        answer = max(result, answer)
+    answer = max(tmp, answer)
+
+    s[i] = 1 - s[i]
     
-        s[i] = '0'
-
-
 print(answer)
