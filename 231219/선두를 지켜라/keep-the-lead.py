@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 
-time_a = [0] * 1000000
-time_b = [0] * 1000000
+time_a = [0] * 1000001
+time_b = [0] * 1000001
 
 t1 = 1
 for i in range(n):
@@ -28,5 +28,7 @@ for i in range(1, 1000000):
         cnt += 1
 
 
-
-print(cnt-1)
+if cnt != 0:
+    print(cnt-1)
+else:
+    print(0)
