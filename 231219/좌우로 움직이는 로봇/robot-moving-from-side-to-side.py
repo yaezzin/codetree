@@ -31,22 +31,10 @@ else:
         time_a[cur_a + i] = time_a[cur_a + i - 1]
 
 cnt = 0
-for i in range(1, OFFSET):
-    if time_a[i] == 0 and time_b[i] == 0:
-        break
-
+for i in range(1, max(cur_a, cur_b)):
     if time_a[i] == time_b[i]:
-        
-        if time_a[i-1] <= time_a[i] and time_b[i-1] > time_b[i]:
-            cnt += 1
-    
-        elif time_a[i-1] >= time_a[i] and time_b[i-1] < time_b[i]:  
+        if time_a[i-1] != time_b[i-1]:
             cnt += 1
         
-        elif time_a[i-1] > time_a[i] and time_b[i-1] <= time_b[i]:  
-            cnt += 1
-        
-        elif time_a[i-1] < time_a[i] and time_b[i-1] >= time_b[i]:  
-            cnt += 1
 
 print(cnt)
