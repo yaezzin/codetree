@@ -11,7 +11,6 @@ for i in range(n):
         time_a[t1] = time_a[t1-1] + v
         t1 += 1
 
-
 t2 = 1
 for i in range(m):
     v, t = map(int, input().split())
@@ -22,7 +21,12 @@ for i in range(m):
 
 cnt = 0
 for i in range(1, 1000000):
-    if time_a[i] == time_b[i] and time_a[i] != 0 and time_b[i] != 0:
+    if time_a[i] > time_b[i] and time_b[i-1] >= time_a[i-1]:
+        cnt += 1
+    
+    elif time_a[i] < time_b[i] and time_b[i-1] <= time_a[i-1]:
         cnt += 1
 
-print(cnt - 1)
+
+
+print(cnt-1)
