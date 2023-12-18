@@ -1,5 +1,6 @@
-time_a = [0] * 50000
-time_b = [0] * 50000
+OFFSET = 1000000
+time_a = [0] * OFFSET
+time_b = [0] * OFFSET
 
 n, m = map(int, input().split())
 
@@ -30,7 +31,7 @@ else:
         time_a[cur_a + i] = time_a[cur_a + i - 1]
 
 cnt = 0
-for i in range(1, 50001):
+for i in range(1, OFFSET):
     if time_a[i] == 0 and time_b[i] == 0:
         break
 
