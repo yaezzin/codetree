@@ -30,5 +30,7 @@ for i in range(n):
             if first == 0 and second == 0 and third == 0:
                 answer = max(answer, sum_value)
 
-
-print(answer)
+if answer == 0:
+    print(-1)
+else:
+    print(answer)
