@@ -13,6 +13,7 @@ dy = [0, -1, 0, 1]
 for d in lst:
     if d == 'L':
         flag = (current_location -1 + 4) % 4
+        
     
     elif d == 'R':
         flag = (current_location + 1) % 4
@@ -20,5 +21,7 @@ for d in lst:
     else:
         x += dx[flag]
         y += dy[flag]
+    
+    current_location = flag
 
 print(x, y)
