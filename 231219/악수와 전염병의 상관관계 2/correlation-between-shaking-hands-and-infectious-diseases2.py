@@ -19,11 +19,19 @@ for t in time:
     # 만약 x가 감염자 리스트에 있고, x의 악수 횟수가 K번 이하이면
     if x in dic and dic[x] < K:
         dic[x] += 1 
-        dic[y] = 0
+        
+        if y in dic:
+            dic[y] += 1
+        else:
+            dic[y] = 0
         
     elif y in dic and dic[y] < K:
         dic[y] += 1 
-        dic[x] = 0
+        
+        if x in dic:
+            dic[x] += 1
+        else:
+            dic[x] = 0
         
        
 for i in range(1, N+ 1 ):
