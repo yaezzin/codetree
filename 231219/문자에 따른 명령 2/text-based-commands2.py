@@ -11,6 +11,8 @@ current_location = 3 # 현재 북쪽을 보고 있음
 dx = [1, 0, -1, 0]
 dy = [0, -1, 0, 1]
 for d in lst:
+    flag = current_location
+    
     if d == 'L':
         flag = (current_location -1 + 4) % 4
         current_location = flag
