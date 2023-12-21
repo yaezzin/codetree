@@ -29,7 +29,9 @@ def solution():
 
     for i in range(n):
         for j in range(m):
-            print(chr(lst[i][j] + 64), end = ' ')
+            tmp = lst[i][j]
+            print(chr((tmp - 1) % 26 + 65), end=' ')
+
         print()
 
 solution()
