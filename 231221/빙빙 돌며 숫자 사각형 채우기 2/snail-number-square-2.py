@@ -3,7 +3,7 @@ lst = [[0] * m for _ in range(n)]
 lst[0][0] = 1
 
 def in_range(x, y):
-    return x >= 0 and x < n and y >= 0 and y < n
+    return x >= 0 and x < n and y >= 0 and y < m
 
 def solution():
     # 아래 왼쪽 위 오른쪽 
@@ -14,7 +14,6 @@ def solution():
     x, y = 0, 0
     
     for i in range(2, n * m + 1):
-
         nx = x + dx[cur_dir]
         ny = y + dy[cur_dir]
 
