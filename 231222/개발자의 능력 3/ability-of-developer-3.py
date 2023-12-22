@@ -5,8 +5,8 @@ total = sum(lst)
 
 min_value = sys.maxsize
 for i in range(len(lst)):
-    for j in range(len(lst)):
-        for k in range(len(lst)):
+    for j in range(i+1, len(lst)):
+        for k in range(j+1, len(lst)):
             s1 = lst[i] + lst[j] + lst[k]
             s2 = total - s1
 
