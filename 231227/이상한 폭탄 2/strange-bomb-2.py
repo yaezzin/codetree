@@ -4,7 +4,7 @@ lst = []
 for i in range(n):
     lst.append(int(input()))
 
-max_num = 0
+max_num = -1
 for i in range(n):
     pivot = lst[i]
     cnt = 0
