@@ -12,11 +12,13 @@ for i in range(n):
     p[i] //= 2
 
     for j in range(n):
+        prefix_sum += p[j]
         if prefix_sum <= budget:
-            prefix_sum += p[j]
             cnt += 1
-  
+        else:
+            break
+            
     p[i] *= 2
-    max_student = max(max_student, cnt-1)
+    max_student = max(max_student, cnt)
 
 print(max_student)
