@@ -10,7 +10,7 @@ for i in range(n):
     cnt = 0
 
     for j in range(i+1, n):
-        if lst[j] == pivot and cnt < 3:
+        if lst[j] == pivot and cnt < k:
             max_num = max(max_num, pivot)
         
         cnt += 1
