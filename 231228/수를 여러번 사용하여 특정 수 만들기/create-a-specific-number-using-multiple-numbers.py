@@ -1,8 +1,8 @@
 A, B, C = map(int, input().split())
 
 max_num = 0
-for i in range(A):
-    for j in range(B):
+for i in range(C//A + 1):
+    for j in range(C//B + 1):
         tmp = (A * i) + (B * j)
         
         if tmp <= C:
