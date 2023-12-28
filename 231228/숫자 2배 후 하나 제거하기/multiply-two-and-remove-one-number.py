@@ -7,9 +7,10 @@ min_diff = sys.maxsize
 for i in range(n):
     lst[i] *= 2
 
-    tmp = []
+    
     
     for j in range(n):
+        tmp = []
         for k in range(n):
             if j != k:
                 # 하나 제외하고 리스트에 넣기
