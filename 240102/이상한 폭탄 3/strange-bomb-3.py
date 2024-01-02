@@ -1,18 +1,20 @@
 n, k = map(int, input().split())
 lst = [int(input()) for i in range(n)]
 
-bomb = {}
+bomb = [0] * 1000001
+
 for i in range(n):
+    max_cnt = 0
     for j in range(i+1, n):
         if lst[i] == lst[j] and j - i <= k:
-            if lst[i] in bomb:
-                bomb[lst[i]] += 1
-            else:
-                bomb[lst[i]] = 1
+            bomb[lst[i]] += 1
 
-max_value = (0, 0)
-for idx, value in bomb.items():
-    if max_value[1] <= value:
-        max_value = (idx, value)
+max_cnt = max(bomb)
 
-print(max_value[0])
+answer = 0
+for i in range(len(bomb)):
+    if bomb[i] == max_cnt and bomb[i] != 0:
+        answer = i
+        break
+
+print(answer)
