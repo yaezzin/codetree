@@ -7,17 +7,12 @@ for i in range(len(people)):
         people[i] = '1'
         
         # 사이간의 거리 구하기
-        idx = []
-        for j in range(len(people)):
-            if people[j] == '1':
-                idx.append(j)
+        min_length = n
+        for j in range(n):
+            for k in range(j+1, n):
+                if people[j] == '1' and people[k] == '1':
+                    min_length = min(min_length, k - j)
 
-        length = []
-        for k in range(len(idx)-1):
-            length.append(idx[k+1] - idx[k])
-        
-        min_length = min(length)
-        
         # 최대값
         answer = max(answer, min_length)
 
