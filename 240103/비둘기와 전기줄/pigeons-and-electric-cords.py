@@ -1,5 +1,5 @@
 n = int(input())
-location = [[0] * 2 for _ in range(n+1)]
+location = [[0] * 2 for _ in range(11)]
 
 for _ in range(n):
     num, loc = map(int, input().split())
