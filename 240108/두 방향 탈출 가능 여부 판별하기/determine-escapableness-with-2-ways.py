@@ -41,7 +41,7 @@ for _ in range(n):
 
 dfs(0,0)
 
-if adj[n-1][m-1] != 0 and adj[n-1][m-1] != 0:
+if adj[n-1][m-1] != 0 and adj[n-1][m-1] != 1:
     print(1)
 else:
     print(0)
