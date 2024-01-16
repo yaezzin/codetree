@@ -1,18 +1,16 @@
-from collections import deque
+import heapq
 
 n = int(input())
 lst = list(map(int, input().split()))
-lst.sort(reverse=True)
+heapq.heapify(lst)
 
-s = 0
+answer = 0
 while len(lst) > 1:
-    first = lst.pop()
-    second = lst.pop()
+    f = heapq.heappop(lst)
+    s = heapq.heappop(lst)
 
-    s += (first + second)
-    lst.append(first + second)
+    answer += (f + s)
 
-    lst.sort(reverse = True)
-    
+    heapq.heappush(lst, f + s)
 
-print(s)
+print(answer)
