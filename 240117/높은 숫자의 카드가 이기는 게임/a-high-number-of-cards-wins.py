@@ -1,5 +1,3 @@
-import heapq
-
 # 입력
 n = int(input())
 
@@ -10,15 +8,16 @@ for _ in range(n):
 
 # 내 카드
 my_cards = [i for i in range(1, 2 * n + 1) if i not in opp_cards]
-heapq.heapify(my_cards)
+
+opp_cards.sort()
+my_cards.sort()
 
 # 정답 구하기
 answer = 0
-for opp_card in opp_cards:
-
-    my_card = heapq.heappop(my_cards)
-
-    if opp_card < my_card:
-        answer += 1    
-    
+b_idx = 0
+for i in range(n):
+    if b_idx < n and my_cards[i] > opp_cards[b_idx]:
+        answer += 1
+        b_idx += 1
+       
 print(answer)
