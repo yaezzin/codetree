@@ -6,8 +6,10 @@ opp_cards = []
 for _ in range(n):
     opp_cards.append(int(input()))
 
+b_set = set(opp_cards)
+
 # 내 카드
-my_cards = [i for i in range(1, 2 * n + 1) if i not in opp_cards]
+my_cards = [i for i in range(1, 2 * n + 1) if i not in b_set]
 
 opp_cards.sort()
 my_cards.sort()
