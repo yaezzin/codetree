@@ -13,4 +13,4 @@ def func(n):
 
 n = int(input())
 dp = [-1] * (n + 1)
-print(func(n))
+print(func(n) % 10007)
