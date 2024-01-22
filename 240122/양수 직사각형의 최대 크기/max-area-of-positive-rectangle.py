@@ -35,4 +35,7 @@ for i in range(n):
         result = func(i, j)
         answer = max(answer, result)
 
-print(answer)
+if answer == 0:
+    print(-1)
+else:
+    print(answer)
