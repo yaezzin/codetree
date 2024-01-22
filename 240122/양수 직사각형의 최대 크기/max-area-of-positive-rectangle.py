@@ -14,7 +14,7 @@ def func(x, y):
             for i in range(row + 1):
                 for j in range(col + 1):
                     if in_range(x + i, y + j):
-                        if grid[x + i][y + j] < 0:
+                        if grid[x + i][y + j] <= 0:
                             flag = False
                             break
                     else:
