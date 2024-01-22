@@ -11,13 +11,13 @@ def find_coins(x, y, k):
     for i in range(n):
         for j in range(n):
             if abs(x-i) + abs(y-j) <= k:
-                s += grid[i][j]
+                s += grid[i][j]       
 
     return s
 
 # Answer
 answer = 0
-for k in range(n):
+for k in range(n+1):
     for i in range(n):
         for j in range(n):
             coin_cnt = find_coins(i, j, k)            
