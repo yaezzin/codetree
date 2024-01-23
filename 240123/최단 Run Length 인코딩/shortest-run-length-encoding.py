@@ -11,20 +11,21 @@ def move_right(s):
     
 def encoding(s):
     seq = 1
-    result = []
+    tmp_str = ""
     for i in range(len(s)-1):
         if s[i] == s[i+1]:
             seq += 1
         
         else:
-            result.append(s[i])
-            result.append(seq)
+            tmp_str += s[i]
+            tmp_str += str(seq)
             seq = 1
     
-    result.append(s[-1])
-    result.append(seq)
-
-    return len(result)
+    tmp_str += s[-1]
+    tmp_str += str(seq)
+    
+    #print(tmp_str)
+    return len(tmp_str)
             
 s = list(input())
 min_length = sys.maxsize
