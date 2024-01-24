@@ -46,9 +46,6 @@ def shift(r1, c1, r2, c2):
     move_right(r1, c1, r2, c2)
     grid[r1-1][c1] = tmp1
 
-if q == 0:
-    pirnt_grid()
-    
 for _ in range(q):
     # 입력
     r1, c1, r2, c2 = map(int, input().split())
