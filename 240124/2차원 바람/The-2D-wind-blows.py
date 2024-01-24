@@ -40,7 +40,6 @@ def move_down(r1, c1, r2, c2):
 
 def shift(r1, c1, r2, c2):  
     tmp1 = grid[r1-1][c1-1]
-
     move_up(r1, c1, r2, c2)
     move_left(r1, c1, r2, c2)
     move_down(r1, c1, r2, c2)
@@ -67,4 +66,4 @@ for _ in range(q):
         for j in range(c1-1, c2):
             grid[i][j] = tmp_lst[i][j]
 
-    pirnt_grid()
+pirnt_grid()
