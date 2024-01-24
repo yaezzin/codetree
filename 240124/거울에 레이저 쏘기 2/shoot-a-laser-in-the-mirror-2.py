@@ -39,10 +39,10 @@ def initialize(start_num):
         return start_num - n -1, n - 1, 1
     
     elif start_num <= 3 * n:
-        return n-1, n - (num -2 * n) , 2
+        return n-1, n - (start_num -2 * n) , 2
     
     else:
-        return n - (num -3 * n), 0, 3
+        return n - (start_num -3 * n), 0, 3
 
 
 
