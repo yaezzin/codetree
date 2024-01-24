@@ -66,3 +66,6 @@ for _ in range(q):
             grid[i][j] = tmp_lst[i][j]
 
     pirnt_grid()
+
+if q == 0:
+    pirnt_grid()
