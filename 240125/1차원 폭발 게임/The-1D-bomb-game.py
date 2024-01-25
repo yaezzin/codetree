@@ -25,7 +25,7 @@ def bomb(grid, consecutive_counts, m):
             for j in range(idx-1, idx + cnt):
                 tmp[j] = 1
 
-    return [i for i in range(n) if not tmp[i]]
+    return [grid[i] for i in range(n) if not tmp[i]]
 
 # 4 ) 메인 함수
 def solution():
