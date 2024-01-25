@@ -1,34 +1,37 @@
 n = int(input())
-block = [int(input()) for _ in range(n)]
-tmp = [0] * n
-except_block = [map(int, input().split()) for _ in range(2)]
+blocks = [int(input()) for _ in range(n)]
 
+s1, e1 = map(int, input().split())
+s2, e2 = map(int, input().split())
 
-for ex in except_block:
-    start, end = ex
-    
+def print_result():
+    length_without_zero = [i for i in blocks if i != 0]
+    print(len(length_without_zero))
+    for block in blocks:
+        if block != 0:
+            print(block)
+
+def push(start, end):
+    global blocks 
+
+    tmp_blocks = [0] * n    
     except_lst = [i for i in range(start-1, end)]
 
     # start ~ end에 해당하는 것들은 tmp 배열에 넣지 않는다
-    tmp_i = 0
+    tmp_idx = 0
     for i in range(n):
         if i not in except_lst:
-            tmp[tmp_i] = block[i]
-            tmp_i += 1
+            tmp_blocks[tmp_idx] = blocks[i]
+            tmp_idx += 1
     
-
     # 복사해서 넣기
     for i in range(n):
-        if tmp[i] != 0:
-            block[i] = tmp[i]
+        if tmp_blocks[i] != 0:
+            blocks[i] = tmp_blocks[i]
     
-    block = tmp
+    blocks = tmp_blocks
+    #print(blocks)
 
-# 길이 출력
-length = [i for i in block if i != 0]
-print(len(length))
-
-# 안의 원소 출력
-for b in block:    
-    if b != 0:
-        print(b)
+push(s1, e1)
+push(s2, e2)
+print_result()
