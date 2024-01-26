@@ -22,7 +22,7 @@ def bomb(grid, consecutive_counts, m):
 
     for idx, cnt in enumerate(consecutive_counts): 
         if cnt >= m - 1: 
-            for j in range(idx-cnt, idx + cnt):
+            for j in range(idx-1, idx + cnt):
                 tmp[j] = 1
 
     # 0인 곳은 삭제되면 안되는 것 -> 0인 부분만 채워서 리턴하기
