@@ -78,7 +78,6 @@ def solution():
         drop(grid)
         
         if flag == 0:
-            print('??')
             break
 
     
