@@ -72,11 +72,19 @@ def solution():
             if can_bomb(consecutive_lst, m):
                 bomb(grid, i, m, consecutive_lst)
                 flag = 1
+ 
+        drop(grid)
+        shift(grid)
+
+        for i in range(n):
+            consecutive_lst = get_consec(grid, i)
+            if can_bomb(consecutive_lst, m):
+                bomb(grid, i, m, consecutive_lst)
+                flag = 1
 
         drop(grid)
         shift(grid)
-        drop(grid)
-        
+  
         if flag == 0:
             break
 
