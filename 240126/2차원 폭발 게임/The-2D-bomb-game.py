@@ -62,7 +62,7 @@ def solution():
     grid = [list(map(int, input().split())) for _ in range(n)]
 
     # k번 반복하며 m개 이상인 것들은 폭발시킨다.
-    for _ in range(k):
+    for _ in range(1001):
         for i in range(n):
             consecutive_lst = get_consec(grid, i)
             if can_bomb(consecutive_lst, m):
@@ -72,16 +72,6 @@ def solution():
         shift(grid)
         drop(grid)
 
-    
-    for i in range(n):
-        consective_lst = get_consec(grid, i)
-        
-        if can_bomb(consective_lst, m):
-            bomb(grid, i, m, consecutive_lst)
-        
-        drop(grid)
-        shift(grid)
-        drop(grid)
 
     result = check_bomb_cnt(grid)
     print(result)
