@@ -1,6 +1,7 @@
 n = int(input())
 x, y = map(int, input().split())
 grid = [list(input()) for _ in range(n)]
+dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]
 
 cur_dir = 0
 answer = 0
@@ -8,16 +9,28 @@ answer = 0
 def in_range(x, y):
     return x >= 0 and y >= 0 and x < n and y < n
 
+def can_not_go(r, c):
+    for x, y in zip(dx, dy):
+        nx, ny = r + x, c + y
+        if in_range(nx, ny) and grid[nx][ny] == '#':
+            continue
+        else:
+            return False
+    
+    return True
+
 def simulate(x, y): 
     global cur_dir
     global answer
-
-    # 동남서북 정의
-    dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]
-
+    
     while True:
+
+        if can_not_go(x, y):
+            answer = -1
+            break
+
         nx, ny = x + dx[cur_dir], y + dy[cur_dir]
-        
+
         if in_range(nx, ny):
             # 1 ) 바라보고 있는 방향으로 이동 불가능한 경우 반시계 방향 회전
             if grid[nx][ny] == '#': 
