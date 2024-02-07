@@ -8,7 +8,7 @@ dp = [INT_MAX] * (m + 1)
 def solution():
     dp[0] = 0
 
-    for i in range(1, n):
+    for i in range(n):
         for j in range(m, -1, -1): # 거꾸로 돌면서
             if j >= nums[i]:
                 dp[j] = min(dp[j], dp[j - nums[i]] + 1)
