@@ -14,4 +14,8 @@ def solution(m):
                 dp[i] = min(dp[i], dp[i - coins[j]] + 1)
 
 solution(m)
-print(dp[m])
+
+if dp[m] == INT_MAX:
+    print(-1)
+else:
+    print(dp[m])
