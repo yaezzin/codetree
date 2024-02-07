@@ -13,7 +13,7 @@ def solution():
     for i in range(1, n + 1):
         for j in range(len(nums)):
             if i >= nums[j]:
-                dp[i] += dp[i - nums[j]] % MOD
+                dp[i] = (dp[i] + dp[i - nums[j]]) % MOD
 
 solution()
 print(dp[n])
