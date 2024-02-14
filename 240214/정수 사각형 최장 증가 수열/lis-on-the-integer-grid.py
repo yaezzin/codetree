@@ -10,7 +10,7 @@ dp = [[-1] * n for _ in range(n)]
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
 
-def solution(x, y, move_cnt):
+def solution(x, y):
     if dp[x][y] != -1:
         return dp[x][y]
 
@@ -21,7 +21,7 @@ def solution(x, y, move_cnt):
         nx, ny = x + dx, y + dy
 
         if in_range(nx, ny) and grid[nx][ny] > grid[x][y]:
-            max_move_cnt = max(max_move_cnt, solution(nx, ny, move_cnt) + move_cnt)
+            max_move_cnt = max(max_move_cnt, solution(nx, ny) + 1)
         
     dp[x][y] = max_move_cnt
     
@@ -30,7 +30,7 @@ def solution(x, y, move_cnt):
 answer = 0
 for i in range(n):
     for j in range(n):
-        tmp = solution(i, j, 1)
+        tmp = solution(i, j)
         answer = max(answer, tmp)
 
 print(answer)
