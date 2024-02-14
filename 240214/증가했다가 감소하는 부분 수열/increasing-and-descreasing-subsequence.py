@@ -3,9 +3,9 @@ nums = list(map(int, input().split()))
 dp = [[0] * 2 for _ in range(n)] # (최대 증가, 최소 증가) 
 
 for i in range(n):
-    dp[0][0] = 1
-    dp[0][1] = 1
-    
+    dp[i][0] = 1
+    dp[i][1] = 1
+
     # 증가하는 부분 수열
     for j in range(i):
         if nums[j] < nums[i]:
