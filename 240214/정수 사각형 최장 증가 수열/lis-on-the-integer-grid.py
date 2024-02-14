@@ -18,7 +18,7 @@ def solution(x, y, move_cnt):
         nx, ny = x + dx, y + dy
 
         if in_range(nx, ny) and grid[nx][ny] > grid[x][y]:
-            max_move_cnt = max(max_move_cnt, solution(nx, ny, move_cnt) + 1)
+            max_move_cnt = max(max_move_cnt, solution(nx, ny, move_cnt) + move_cnt)
         
     dp[x][y] = max_move_cnt
     
