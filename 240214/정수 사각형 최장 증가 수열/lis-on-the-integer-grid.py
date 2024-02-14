@@ -5,12 +5,15 @@ grid = [
     for _ in range(n)
 ]
 
-dp = [[0] * n for _ in range(n)]
+dp = [[-1] * n for _ in range(n)]
 
 def in_range(x, y):
     return 0 <= x < n and 0 <= y < n
 
 def solution(x, y, move_cnt):
+    if dp[x][y] != -1:
+        return dp[x][y]
+
     dxs, dys = [0, 1, 0, -1], [1, 0, -1, 0]
     
     max_move_cnt = 1
