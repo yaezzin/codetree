@@ -1,11 +1,28 @@
-# 자주 등장한 순서대로 k개 출력 - 횟수가 동일하면 값이 더 큰숫자 먼저 출력
-from collections import Counter
+# 변수 선언 및 입력:
+n, k = tuple(map(int, input().split()))
+arr = list(map(int, input().split()))
 
-n, k = map(int, input().split())
-nums = list(map(int, input().split()))
-nums.sort(reverse=True)
-counts = Counter(nums)
+count = dict()
 
-result = sorted(counts.most_common(k), key=lambda x: (-x[1], -x[0]))
-for r in result:
-    print(r[0], end = ' ')
+# 각 숫자가 몇 번씩 나왔는지를
+# hashmap에 기록해줍니다.
+for elem in arr:
+    if elem in count:
+        count[elem] += 1
+    else:
+        count[elem] = 1
+
+# hashmap을 순회하며
+# 중복되지 않게 새 배열을 만들어 줍니다.
+new_arr = [
+    [value, key]
+    for key, value in count.items()
+]
+
+# 문제에서 요구한 정렬 기준에 맞추어 정렬합니다.
+new_arr = sorted(new_arr)
+
+# 출력:
+leng = len(new_arr)
+for i in range(leng - 1, leng - k - 1, -1):
+    print(new_arr[i][1], end=" ")
