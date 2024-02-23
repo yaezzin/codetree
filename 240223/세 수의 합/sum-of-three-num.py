@@ -1,22 +1,22 @@
-#1 2 3 5 6 0
-
 n, k = map(int, input().split())
 nums = list(map(int, input().split()))
 
-two_sum = {}
+count = {}
+
+for e in nums:
+    if e in count:
+        count[e] += 1
+    else:
+        count[e] = 1
+
 answer = 0
 for i in range(n):
-    for j in range(i + 1, n):
-        s = nums[i] + nums[j]
+    count[nums[i]] -= 1
+
+    for j in range(i):
+        diff = k - nums[i] - nums[j]
         
-        diff = k - s
-
-        if diff in two_sum:
-            answer += two_sum[diff]
-
-        if s in two_sum:
-            two_sum[s] += 1
-        else:
-            two_sum[s] = 1
+        if diff in count:
+            answer += count[diff]
 
 print(answer)
