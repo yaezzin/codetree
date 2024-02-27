@@ -1,5 +1,5 @@
 n1 = int(input())
-lst1 = list(map(int, input().split()))
+lst1 = set(map(int, input().split()))
 
 n2 = int(input())
 lst2 = list(map(int, input().split()))
