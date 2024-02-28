@@ -7,7 +7,7 @@ ts = SortedSet()
 for _ in range(n):
     ts.add(tuple(map(int, input().split())))
 
-for _ in range(n):
+for _ in range(m):
     x = int(input())
 
     idx = ts.bisect_right((x, 0))
