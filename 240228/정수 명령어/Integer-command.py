@@ -1,9 +1,9 @@
 from sortedcontainers import SortedSet
 
 t = int(input())
-ts = SortedSet()
 
 for _ in range(t):
+    ts = SortedSet()
     k = int(input())
 
     for _ in range(k):
