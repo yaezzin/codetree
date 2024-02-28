@@ -8,48 +8,49 @@ for _ in range(n):
     operation = command[0]
 
     if operation == 'add':
-        value = command[1]
-        ts.add(value)
+        value = int(command[1])
+        
+        if value not in ts:
+            ts.add(value)
     
     elif operation == 'remove':
-        value = command[1]
+        value = int(command[1])
         ts.remove(value)
     
     elif operation == 'find':
-        value = command[1]
+        value = int(command[1])
         
         if value in ts:
-            print('true')
-        
+            print('true')    
         else:
             print('false')
 
     elif operation == 'lower_bound':
-        value = command[1]
+        value = int(command[1])
         idx = ts.bisect_left(value)
         
-        if idx >= len(ts):
-            print('None')
-        else:
+        if idx < len(ts):
             print(ts[idx])
+        else:
+            print('None')
 
     elif operation == 'upper_bound':
-        value = command[1]
+        value = int(command[1])
         idx = ts.bisect_right(value)
         
-        if idx >= len(ts):
-            print('None')
-        else:
+        if idx < len(ts):
             print(ts[idx])
-    
-    elif operation == 'largest':
-        if len(ts) == 0:
-            print('None')
         else:
-            print(ts[-1])
+            print('None')
+            
+    elif operation == 'largest':
+        if ts:
+            print(ts[-1])  
+        else:
+            print('None')  
     
     elif operation == 'smallest':
-        if len(ts) == 0:
-            print('None')
+        if ts:
+            print(ts[0])  
         else:
-            print(ts[0])
+            print('None')
