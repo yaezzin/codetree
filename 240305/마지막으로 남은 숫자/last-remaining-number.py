@@ -9,9 +9,6 @@ heapq.heapify(heap)
 while len(heap) >= 2:
     max_num1 = -heapq.heappop(heap)
     max_num2 = -heapq.heappop(heap)
-
-    print(max_num1, max_num2)
-    
     diff = max_num1 - max_num2
 
     if diff != 0:
