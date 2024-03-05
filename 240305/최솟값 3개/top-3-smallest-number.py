@@ -11,10 +11,12 @@ for num in nums:
     if len(heap) < 3:
         print(-1)
     else:
-        three_nums = nsmallest(3, heap)        
+        num1 = heapq.heappop(heap)    
+        num3 = heapq.heappop(heap)    
+        num2 =heapq.heappop(heap)    
         
-        answer = 1
-        for t in three_nums:
-            answer *= t
-        
-        print(answer)
+        print(num1 * num2 * num3)
+
+        heapq.heappush(heap, num1)
+        heapq.heappush(heap, num2)
+        heapq.heappush(heap, num3)
