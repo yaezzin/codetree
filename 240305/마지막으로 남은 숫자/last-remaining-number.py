@@ -14,4 +14,7 @@ while len(heap) >= 2:
     if diff != 0:
         heapq.heappush(heap, -diff)
 
-print(-heap[0])
+if len(heap) == 0:
+    print(-1)
+else:
+    print(-heap[0])
